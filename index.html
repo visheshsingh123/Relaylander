@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0D0B14">
+<title>Relay — Messaging, just the two of you</title>
+<link rel="icon" type="image/png" href="../Assets/icon.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../Assets/icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Relay">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../landing.css">
+</head>
+<body class="landing-body">
+
+<header class="landing-nav">
+  <h1 class="logo">Relay<span class="logo__dot">.</span></h1>
+  <nav class="landing-nav__links" aria-label="Account">
+    <a class="landing-nav__login" href="../login.html">Log in</a>
+    <a class="landing-nav__signup" href="../signup.html">Sign up</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__copy">
+      <h2 class="hero__title">One conversation.<br>Nothing else competing for it.</h2>
+      <p class="hero__subtitle">
+        Relay is messaging built around a single idea: every chat is just you and one
+        other person. No group noise, no channels, no feed — the person you're talking
+        to is always the whole point.
+      </p>
+      <div class="hero__actions">
+        <a class="hero__cta" href="../signup.html">Create an account</a>
+        <a class="hero__secondary" href="../login.html">Log in</a>
+      </div>
+
+      <div class="app-download-row">
+        <a href="../apk/Relay.apk" download="relay.apk" class="btn-app-download btn-android" id="downloadAndroidBtn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1522-.5676.416.416 0 0 0-.5676.1522l-2.0223 3.503C15.5942 8.3514 13.856 8.01 12 8.01c-1.856 0-3.5942.3414-5.1367.9398L4.841 5.4468a.416.416 0 0 0-.5676-.1522.416.416 0 0 0-.1522.5676l1.9973 3.4592C2.6873 11.2355.3333 14.654.3333 18.6667h23.3334c0-4.0127-2.354-7.4312-5.7862-9.3453z"/>
+          </svg>
+          <div class="btn-app-download__text">
+            <span class="btn-app-download__sub">Download for</span>
+            <span class="btn-app-download__main">Android</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__demo" aria-hidden="true">
+      <div class="demo-window">
+        <div class="demo-window__header">
+          <span class="avatar avatar--md">JD</span>
+          <div class="demo-window__who">
+            <span class="demo-window__name">John Doe</span>
+            <span class="demo-window__status"><span class="status-dot"></span>Online</span>
+          </div>
+        </div>
+        <div class="demo-window__thread">
+          <div class="msg-row is-in group-start demo-msg demo-msg--1">
+            <div class="bubble"><span class="bubble__text">Hey! Did you get a chance to look at the deck?</span><span class="bubble__meta">10:12 AM</span></div>
+          </div>
+          <div class="msg-row is-out group-start demo-msg demo-msg--2">
+            <div class="bubble"><span class="bubble__text">Just opened it, looks great so far.</span><span class="bubble__meta">10:20 AM<span class="checkmarks is-read"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M1 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 8.5l3 3 6-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></div>
+          </div>
+          <div class="msg-row is-in group-start demo-msg demo-msg--3">
+            <div class="bubble"><span class="bubble__text">Let's sync at 3?</span><span class="bubble__meta">10:42 AM</span></div>
+          </div>
+          <div class="demo-typing demo-msg demo-msg--4">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features">
+    <div class="feature">
+      <span class="feature__icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <path d="M4 12l16-7-6.5 16-2.6-6.9L4 12z" fill="currentColor"/>
+        </svg>
+      </span>
+      <h3 class="feature__title">Sent the moment you mean it</h3>
+      <p class="feature__body">Messages land instantly, with no spinner between typing and being heard. Relay stays out of the way of the conversation.</p>
+    </div>
+    <div class="feature">
+      <span class="feature__icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <circle cx="8" cy="9" r="4" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17" cy="13" r="4" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+      </span>
+      <h3 class="feature__title">Always one-to-one</h3>
+      <p class="feature__body">There are no group threads or broadcast channels to manage. Every conversation in Relay is between exactly two people, by design.</p>
+    </div>
+    <div class="feature">
+      <span class="feature__icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <path d="M2 8.5l3.2 3.2L14 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <h3 class="feature__title">Know where you stand</h3>
+      <p class="feature__body">Presence, typing, and read receipts are always visible, so you're never guessing whether a message actually got through.</p>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE ============ -->
+  <section class="showcase">
+    <div class="showcase__copy">
+      <h2 class="showcase__title">Find the right conversation without thinking about it</h2>
+      <p class="showcase__body">
+        Search by name or @username, see who's online at a glance, and pick up exactly
+        where you left off. Your conversation list stays as quiet as your inbox should be.
+      </p>
+    </div>
+    <div class="showcase__demo" aria-hidden="true">
+      <div class="demo-list">
+        <button type="button" class="conv-item is-active has-unread" tabindex="-1">
+          <span class="avatar-wrap">
+            <span class="avatar avatar--sm">JD</span>
+            <span class="presence-dot"></span>
+          </span>
+          <span class="conv-item__body">
+            <span class="conv-item__top">
+              <span class="conv-item__name">John Doe</span>
+              <span class="conv-item__time">10:42 AM</span>
+            </span>
+            <span class="conv-item__preview-row">
+              <span class="conv-item__preview">Let's sync at 3?</span>
+              <span class="unread-badge">2</span>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="conv-item" tabindex="-1">
+          <span class="avatar-wrap">
+            <span class="avatar avatar--sm">MK</span>
+          </span>
+          <span class="conv-item__body">
+            <span class="conv-item__top">
+              <span class="conv-item__name">Mira Kapoor</span>
+              <span class="conv-item__time">Yesterday</span>
+            </span>
+            <span class="conv-item__preview-row">
+              <span class="conv-item__preview">You: Sounds good, see you then</span>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="conv-item" tabindex="-1">
+          <span class="avatar-wrap">
+            <span class="avatar avatar--sm">RS</span>
+            <span class="presence-dot"></span>
+          </span>
+          <span class="conv-item__body">
+            <span class="conv-item__top">
+              <span class="conv-item__name">Ravi Shah</span>
+              <span class="conv-item__time">Tue</span>
+            </span>
+            <span class="conv-item__preview-row">
+              <span class="conv-item__preview">Sent the files over</span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="closing-cta">
+    <h2 class="closing-cta__title">Start a conversation worth having</h2>
+    <p class="closing-cta__body">Free to join, ready in under a minute.</p>
+    <a class="hero__cta" href="../signup.html">Create an account</a>
+  </section>
+
+</main>
+
+<footer class="landing-footer">
+  <span class="logo logo--footer">Relay<span class="logo__dot">.</span></span>
+  <nav class="landing-footer__links" aria-label="Footer">
+    <a href="../login.html">Log in</a>
+    <a href="../signup.html">Sign up</a>
+  </nav>
+</footer>
+
+<script type="module">
+  import { auth } from "../firebase-config.js";
+  import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+
+  const isPWA = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user || isPWA) {
+      window.location.href = "../index.html";
+    }
+    unsubscribe();
+  });
+</script>
+
+<script src="../pwa-register.js"></script>
+
+</body>
+</html>
