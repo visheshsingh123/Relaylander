@@ -15,6 +15,16 @@ main { display: block; }
    Nav
    ========================================================================== */
 .landing-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(13, 11, 20, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+}
+
+.landing-nav__inner {
   height: var(--header-h);
   display: flex;
   align-items: center;
@@ -59,6 +69,7 @@ main { display: block; }
    Hero
    ========================================================================== */
 .hero {
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
   padding: var(--sp-6) var(--sp-6) calc(var(--sp-6) * 2.5);
@@ -66,9 +77,24 @@ main { display: block; }
   grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
   gap: calc(var(--sp-6) * 2);
   align-items: center;
+}
+
+/* Full-bleed glow: stretches to the viewport edge so wide screens don't
+   show plain, empty gutters beside the centered 1120px content column. */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
   background:
-    radial-gradient(ellipse 780px 520px at 12% -10%, rgba(110, 86, 207, 0.20), transparent 60%),
-    radial-gradient(ellipse 640px 420px at 100% 10%, rgba(156, 129, 245, 0.10), transparent 55%);
+    radial-gradient(ellipse 900px 560px at 8% -10%, rgba(110, 86, 207, 0.22), transparent 60%),
+    radial-gradient(ellipse 760px 480px at 92% 6%, rgba(156, 129, 245, 0.15), transparent 55%),
+    radial-gradient(ellipse 620px 420px at 50% 105%, rgba(110, 86, 207, 0.09), transparent 65%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero__title {
@@ -211,14 +237,27 @@ main { display: block; }
    Features
    ========================================================================== */
 .features {
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 var(--sp-6) calc(var(--sp-6) * 2.5);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-6);
-  border-top: 1px solid var(--border-hairline);
   padding-top: calc(var(--sp-6) * 2);
+}
+
+/* Full-bleed divider — the border used to stop at 1120px, leaving a
+   floating line with dead space on either side on wide screens. */
+.features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  transform: translateX(-50%);
+  background: var(--border-hairline);
 }
 
 .feature__icon {
@@ -251,13 +290,35 @@ main { display: block; }
    Showcase
    ========================================================================== */
 .showcase {
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 var(--sp-6) calc(var(--sp-6) * 2.5);
+  padding: calc(var(--sp-6) * 1.5) var(--sp-6) calc(var(--sp-6) * 2.5);
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
   gap: calc(var(--sp-6) * 2);
   align-items: center;
+}
+
+/* Full-bleed wash — softens the transition into this section across the
+   whole viewport width, instead of a hard edge at the content column. */
+.showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(22, 18, 36, 0.55) 15%,
+    rgba(22, 18, 36, 0.55) 85%,
+    transparent
+  );
+  z-index: -1;
+  pointer-events: none;
 }
 
 .showcase__title {
@@ -295,18 +356,25 @@ main { display: block; }
    Closing CTA
    ========================================================================== */
 .closing-cta {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: calc(var(--sp-6) * 2) var(--sp-6) calc(var(--sp-6) * 3);
+  margin: 0 var(--sp-6) calc(var(--sp-6) * 1.5);
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: calc(var(--sp-6) * 2.4) var(--sp-6);
   text-align: center;
-  border-top: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-hairline);
+  background:
+    radial-gradient(ellipse 620px 320px at 50% -20%, rgba(110, 86, 207, 0.22), transparent 65%),
+    var(--bg-surface);
 }
 
 .closing-cta__title {
   font-size: clamp(1.75rem, 3.4vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin: 0 0 var(--sp-3);
+  max-width: 22ch;
+  margin: 0 auto var(--sp-3);
 }
 
 .closing-cta__body {
@@ -319,27 +387,67 @@ main { display: block; }
    Footer
    ========================================================================== */
 .landing-footer {
+  border-top: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+}
+
+.landing-footer__top {
   max-width: 1120px;
   margin: 0 auto;
-  padding: var(--sp-6);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-hairline);
+  padding: calc(var(--sp-6) * 1.6) var(--sp-6) var(--sp-6);
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(2, minmax(0, 1fr));
+  gap: var(--sp-6);
 }
 
-.logo--footer { font-size: var(--fs-md); }
-
-.landing-footer__links {
+.landing-footer__brand {
   display: flex;
-  gap: var(--sp-5);
+  flex-direction: column;
+  gap: var(--sp-2);
 }
-.landing-footer__links a {
+
+.logo--footer { font-size: var(--fs-lg); }
+
+.landing-footer__tagline {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  max-width: 32ch;
+  margin: 0;
+}
+
+.landing-footer__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+
+.landing-footer__heading {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--sp-1);
+}
+
+.landing-footer__col a {
   font-size: var(--fs-sm);
   color: var(--text-muted);
   text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
-.landing-footer__links a:hover { color: var(--text-primary); }
+.landing-footer__col a:hover { color: var(--text-primary); }
+
+.landing-footer__bottom {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.landing-footer__copy {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--sp-4) var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
 
 /* ==========================================================================
    Responsive
@@ -361,15 +469,27 @@ main { display: block; }
     grid-template-columns: 1fr;
     gap: calc(var(--sp-6) * 1.25);
   }
+
+  .landing-footer__top {
+    grid-template-columns: 1fr 1fr;
+    row-gap: calc(var(--sp-6) * 1.25);
+  }
+  .landing-footer__brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 520px) {
-  .landing-nav { padding: 0 var(--sp-4); }
+  .landing-nav__inner { padding: 0 var(--sp-4); }
   .hero { padding-left: var(--sp-4); padding-right: var(--sp-4); }
   .features { padding-left: var(--sp-4); padding-right: var(--sp-4); }
   .showcase { padding-left: var(--sp-4); padding-right: var(--sp-4); }
-  .closing-cta { padding-left: var(--sp-4); padding-right: var(--sp-4); }
-  .landing-footer { padding: var(--sp-4); flex-direction: column; gap: var(--sp-3); }
+  .closing-cta { margin-left: var(--sp-4); margin-right: var(--sp-4); padding: calc(var(--sp-6) * 1.6) var(--sp-4); }
+
+  .landing-footer__top {
+    grid-template-columns: 1fr;
+    padding: var(--sp-6) var(--sp-4);
+  }
+  .landing-footer__brand { grid-column: auto; }
+  .landing-footer__copy { padding: var(--sp-4); }
 }
 
 /* ==========================================================================

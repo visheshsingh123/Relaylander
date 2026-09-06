@@ -13,11 +13,13 @@
 <body class="landing-body">
 
 <header class="landing-nav">
-  <h1 class="logo"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></h1>
-  <nav class="landing-nav__links" aria-label="Account">
-    <a class="landing-nav__login" href="https://relayapplication.vercel.app/login.html">Log in</a>
-    <a class="landing-nav__signup" href="https://relayapplication.vercel.app/signup.html">Sign up</a>
-  </nav>
+  <div class="landing-nav__inner">
+    <h1 class="logo"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></h1>
+    <nav class="landing-nav__links" aria-label="Account">
+      <a class="landing-nav__login" href="https://relayapplication.vercel.app/login.html">Log in</a>
+      <a class="landing-nav__signup" href="https://relayapplication.vercel.app/signup.html">Sign up</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -178,11 +180,27 @@
 </main>
 
 <footer class="landing-footer">
-  <span class="logo logo--footer"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></span>
-  <nav class="landing-footer__links" aria-label="Footer">
-    <a href="https://relayapplication.vercel.app/login.html">Log in</a>
-    <a href="https://relayapplication.vercel.app/signup.html">Sign up</a>
-  </nav>
+  <div class="landing-footer__top">
+    <div class="landing-footer__brand">
+      <span class="logo logo--footer"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></span>
+      <p class="landing-footer__tagline">Messaging for one conversation at a time.</p>
+    </div>
+
+    <nav class="landing-footer__col" aria-label="Account">
+      <h4 class="landing-footer__heading">Account</h4>
+      <a href="https://relayapplication.vercel.app/login.html">Log in</a>
+      <a href="https://relayapplication.vercel.app/signup.html">Create an account</a>
+    </nav>
+
+    <nav class="landing-footer__col" aria-label="Get the app">
+      <h4 class="landing-footer__heading">Get the app</h4>
+      <a href="https://relayapplication.vercel.app/apk/Relay.apk" download="relay.apk">Download for Android</a>
+    </nav>
+  </div>
+
+  <div class="landing-footer__bottom">
+    <p class="landing-footer__copy">&copy; 2026 Relay. Built for two.</p>
+  </div>
 </footer>
 
 </body>
