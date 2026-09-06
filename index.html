@@ -4,11 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0D0B14">
-<title>Relay — Messaging, just the two of you</title>
+<title>Relay — One-on-One Messaging App | RelayChat Live Chat</title>
+<meta name="description" content="Relay (RelayChat) is a one-to-one messaging app with no groups, no channels, no noise — just real-time live chat between two people. Sign up free or download the RelayApp for Android.">
+<meta name="keywords" content="Relay, RelayChat, Relay Chat, RelayApplication, Relay Application, RelayApp, Relay App, RelayChatting, Relay Chatting, RelayLiveChat, Relay Live Chat, one-on-one messaging app, private messaging, live chat app">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Relay">
+<link rel="canonical" href="https://relaychatting.vercel.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Relay">
+<meta property="og:title" content="Relay — One-on-One Messaging App | RelayChat Live Chat">
+<meta property="og:description" content="No group noise, no channels, no feed. Relay (RelayChat) keeps every conversation one-to-one. Sign up for RelayApplication or download RelayApp for Android.">
+<meta property="og:url" content="https://relaychatting.vercel.app/">
+<meta property="og:image" content="https://relaychatting.vercel.app/Assets/icon.png">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Relay — One-on-One Messaging App | RelayChat Live Chat">
+<meta name="twitter:description" content="RelayChat: one-to-one messaging with instant delivery, presence, and read receipts. Try RelayApplication free or get RelayApp for Android.">
+<meta name="twitter:image" content="https://relaychatting.vercel.app/Assets/icon.png">
+
 <link rel="icon" type="image/png" href="Assets/icon.png">
 <link rel="apple-touch-icon" href="Assets/icon.png">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="landing.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Relay",
+  "alternateName": ["RelayChat", "Relay Chat", "RelayApplication", "Relay Application", "RelayApp", "Relay App", "RelayChatting", "Relay Chatting", "RelayLiveChat", "Relay Live Chat"],
+  "url": "https://relaychatting.vercel.app/",
+  "applicationCategory": "CommunicationApplication",
+  "operatingSystem": "Android, Web",
+  "description": "Relay is a one-to-one messaging app — every conversation is just you and one other person, with instant delivery, presence, typing indicators, and read receipts.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://relayapplication.vercel.app/apk/Relay.apk",
+  "sameAs": [
+    "https://relaychatting.vercel.app/",
+    "https://relayapplication.vercel.app/"
+  ]
+}
+</script>
 </head>
 <body class="landing-body">
 
@@ -22,7 +66,7 @@
   </div>
 </header>
 
-<main>
+<main aria-label="Relay — RelayChat one-on-one messaging app">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -39,7 +83,7 @@
       </div>
 
       <div class="app-download-row">
-        <a href="https://relayapplication.vercel.app/apk/Relay.apk" download="relay.apk" class="btn-app-download btn-android" id="downloadAndroidBtn">
+        <a href="https://relayapplication.vercel.app/apk/Relay.apk" download="relay.apk" class="btn-app-download btn-android" id="downloadAndroidBtn" aria-label="Download RelayApp for Android">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
             <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1522-.5676.416.416 0 0 0-.5676.1522l-2.0223 3.503C15.5942 8.3514 13.856 8.01 12 8.01c-1.856 0-3.5942.3414-5.1367.9398L4.841 5.4468a.416.416 0 0 0-.5676-.1522.416.416 0 0 0-.1522.5676l1.9973 3.4592C2.6873 11.2355.3333 14.654.3333 18.6667h23.3334c0-4.0127-2.354-7.4312-5.7862-9.3453z"/>
           </svg>
@@ -183,7 +227,7 @@
   <div class="landing-footer__top">
     <div class="landing-footer__brand">
       <span class="logo logo--footer"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></span>
-      <p class="landing-footer__tagline">Messaging for one conversation at a time.</p>
+      <p class="landing-footer__tagline">Messaging for one conversation at a time. Also known as RelayChat, available as RelayApp for Android.</p>
     </div>
 
     <nav class="landing-footer__col" aria-label="Account">
@@ -200,6 +244,7 @@
 
   <div class="landing-footer__bottom">
     <p class="landing-footer__copy">&copy; 2026 Relay. Built for two.</p>
+    <p class="landing-footer__copy landing-footer__copy--small">Relay, RelayChat, RelayApplication, RelayApp, RelayChatting, and RelayLiveChat all refer to the same one-on-one messaging service.</p>
   </div>
 </footer>
 
