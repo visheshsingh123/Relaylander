@@ -3,6 +3,11 @@
    Extends styles.css tokens. Loaded after styles.css.
    ========================================================================== */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 24px);
+}
+
 .landing-body {
   overflow-y: auto;
   height: auto;
@@ -18,10 +23,10 @@ main { display: block; }
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(13, 11, 20, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid transparent;
+  background: rgba(13, 11, 20, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-hairline);
 }
 
 .landing-nav__inner {
@@ -39,6 +44,15 @@ main { display: block; }
   align-items: center;
   gap: var(--sp-5);
 }
+
+.landing-nav__link {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+.landing-nav__link:hover { color: var(--text-primary); }
 
 .landing-nav__login {
   font-size: var(--fs-sm);
@@ -72,15 +86,13 @@ main { display: block; }
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  padding: var(--sp-6) var(--sp-6) calc(var(--sp-6) * 2.5);
+  padding: calc(var(--sp-6) * 1.5) var(--sp-6) calc(var(--sp-6) * 2.5);
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
   gap: calc(var(--sp-6) * 2);
   align-items: center;
 }
 
-/* Full-bleed glow: stretches to the viewport edge so wide screens don't
-   show plain, empty gutters beside the centered 1120px content column. */
 .hero::before {
   content: "";
   position: absolute;
@@ -95,6 +107,28 @@ main { display: block; }
     radial-gradient(ellipse 620px 420px at 50% 105%, rgba(110, 86, 207, 0.09), transparent 65%);
   z-index: -1;
   pointer-events: none;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(110, 86, 207, 0.14);
+  border: 1px solid rgba(156, 129, 245, 0.25);
+  color: var(--highlight);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  margin-bottom: var(--sp-4);
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--highlight);
+  box-shadow: 0 0 8px var(--highlight);
 }
 
 .hero__title {
@@ -145,7 +179,7 @@ main { display: block; }
 }
 .hero__secondary:hover { color: var(--text-primary); }
 
-/* Hero demo — a self-contained replica of the chat window */
+/* Hero demo — replica of the chat window */
 .hero__demo { display: flex; justify-content: center; }
 
 .demo-window {
@@ -213,7 +247,6 @@ main { display: block; }
   30% { transform: translateY(-3px); opacity: 1; }
 }
 
-/* Single orchestrated entrance: bubbles arrive one after another on load */
 .demo-msg {
   opacity: 0;
   transform: translateY(8px);
@@ -234,21 +267,99 @@ main { display: block; }
 }
 
 /* ==========================================================================
+   Trust / Highlights Bar
+   ========================================================================== */
+.trust-bar {
+  max-width: 1120px;
+  margin: 0 auto var(--sp-6);
+  padding: 0 var(--sp-6);
+}
+
+.trust-bar__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.trust-item__icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.trust-item__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.trust-item__text strong {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.trust-item__text span {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+.section-header {
+  margin-bottom: calc(var(--sp-6) * 1.5);
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--highlight);
+  margin-bottom: var(--sp-2);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--sp-2);
+}
+
+.section-subtitle {
+  font-size: var(--fs-base);
+  color: var(--text-muted);
+  max-width: 54ch;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
    Features
    ========================================================================== */
 .features {
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 var(--sp-6) calc(var(--sp-6) * 2.5);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-6);
-  padding-top: calc(var(--sp-6) * 2);
+  padding: calc(var(--sp-6) * 2) var(--sp-6) calc(var(--sp-6) * 2.5);
 }
 
-/* Full-bleed divider — the border used to stop at 1120px, leaving a
-   floating line with dead space on either side on wide screens. */
 .features::before {
   content: "";
   position: absolute;
@@ -258,6 +369,25 @@ main { display: block; }
   height: 1px;
   transform: translateX(-50%);
   background: var(--border-hairline);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--sp-6) * 1.25);
+}
+
+.feature {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--sp-6) * 1.2) var(--sp-5);
+  transition: transform var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+.feature:hover {
+  transform: translateY(-2px);
+  border-color: rgba(156, 129, 245, 0.35);
 }
 
 .feature__icon {
@@ -283,7 +413,6 @@ main { display: block; }
   line-height: 1.6;
   color: var(--text-muted);
   margin: 0;
-  max-width: 34ch;
 }
 
 /* ==========================================================================
@@ -300,8 +429,6 @@ main { display: block; }
   align-items: center;
 }
 
-/* Full-bleed wash — softens the transition into this section across the
-   whole viewport width, instead of a hard edge at the content column. */
 .showcase::before {
   content: "";
   position: absolute;
@@ -353,6 +480,158 @@ main { display: block; }
 .demo-list .conv-item.is-active:hover { background: var(--bg-surface-raised); }
 
 /* ==========================================================================
+   Security & Privacy Section
+   ========================================================================== */
+.security-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: calc(var(--sp-6) * 1.5) var(--sp-6);
+}
+
+.security-card {
+  background: radial-gradient(ellipse 700px 400px at 50% 0%, rgba(110, 86, 207, 0.18), transparent 70%),
+              var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--sp-6) * 1.8) calc(var(--sp-6) * 1.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.security-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4DEEEA;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--sp-3);
+}
+
+.security-card__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--sp-3);
+}
+
+.security-card__desc {
+  font-size: var(--fs-base);
+  color: var(--text-muted);
+  max-width: 58ch;
+  line-height: 1.6;
+  margin: 0 0 var(--sp-5);
+}
+
+.security-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.security-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.security-list li svg {
+  color: var(--highlight);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+.faq-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: calc(var(--sp-6) * 2) var(--sp-6);
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--duration-fast) var(--ease-standard),
+              background-color var(--duration-fast) var(--ease-standard);
+}
+
+.faq-item:hover {
+  border-color: rgba(156, 129, 245, 0.35);
+}
+
+.faq-item[open] {
+  background: var(--bg-surface-raised);
+  border-color: rgba(156, 129, 245, 0.4);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker,
+.faq-question::marker {
+  display: none;
+}
+
+.faq-icon {
+  color: var(--text-muted);
+  transition: transform var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+  flex-shrink: 0;
+  margin-left: var(--sp-3);
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(180deg);
+  color: var(--highlight);
+}
+
+.faq-answer {
+  padding: 0 var(--sp-5) var(--sp-5);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.faq-answer code {
+  background: rgba(110, 86, 207, 0.15);
+  color: var(--highlight);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9em;
+}
+
+/* ==========================================================================
    Closing CTA
    ========================================================================== */
 .closing-cta {
@@ -381,6 +660,14 @@ main { display: block; }
   font-size: var(--fs-base);
   color: var(--text-muted);
   margin: 0 0 var(--sp-6);
+}
+
+.closing-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
 }
 
 /* ==========================================================================
@@ -460,14 +747,22 @@ main { display: block; }
   }
   .hero__demo { order: -1; margin-bottom: var(--sp-2); }
 
+  .trust-bar__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .showcase {
     grid-template-columns: 1fr;
   }
   .showcase__demo { order: -1; }
 
-  .features {
+  .features-grid {
     grid-template-columns: 1fr;
-    gap: calc(var(--sp-6) * 1.25);
+    gap: var(--sp-4);
+  }
+
+  .landing-nav__links .landing-nav__link {
+    display: none;
   }
 
   .landing-footer__top {
@@ -480,9 +775,17 @@ main { display: block; }
 @media (max-width: 520px) {
   .landing-nav__inner { padding: 0 var(--sp-4); }
   .hero { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .trust-bar { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .trust-bar__inner { grid-template-columns: 1fr; padding: var(--sp-4); }
   .features { padding-left: var(--sp-4); padding-right: var(--sp-4); }
   .showcase { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .security-section { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .security-card { padding: var(--sp-5) var(--sp-4); }
+  .faq-section { padding-left: var(--sp-4); padding-right: var(--sp-4); }
   .closing-cta { margin-left: var(--sp-4); margin-right: var(--sp-4); padding: calc(var(--sp-6) * 1.6) var(--sp-4); }
+
+  .faq-question { padding: var(--sp-4); font-size: var(--fs-sm); }
+  .faq-answer { padding: 0 var(--sp-4) var(--sp-4); }
 
   .landing-footer__top {
     grid-template-columns: 1fr;

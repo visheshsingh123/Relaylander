@@ -31,27 +31,92 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="landing.css">
 
+<!-- WebApplication & FAQ Schema -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Relay",
-  "alternateName": ["RelayChat", "Relay Chat", "RelayApplication", "Relay Application", "RelayApp", "Relay App", "RelayChatting", "Relay Chatting", "RelayLiveChat", "Relay Live Chat"],
-  "url": "https://relaychatting.vercel.app/",
-  "applicationCategory": "CommunicationApplication",
-  "operatingSystem": "Android, Web",
-  "description": "Relay is a one-to-one messaging app — every conversation is just you and one other person, with instant delivery, presence, typing indicators, and read receipts.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Relay",
+    "alternateName": ["RelayChat", "Relay Chat", "RelayApplication", "Relay Application", "RelayApp", "Relay App", "RelayChatting", "Relay Chatting", "RelayLiveChat", "Relay Live Chat"],
+    "url": "https://relaychatting.vercel.app/",
+    "applicationCategory": "CommunicationApplication",
+    "operatingSystem": "Android, Web",
+    "description": "Relay is a one-to-one messaging app — every conversation is just you and one other person, with instant delivery, presence, typing indicators, and read receipts.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "downloadUrl": "https://relayapplication.vercel.app/apk/Relay.apk",
+    "sameAs": [
+      "https://relaychatting.vercel.app/",
+      "https://relayapplication.vercel.app/"
+    ]
   },
-  "downloadUrl": "https://relayapplication.vercel.app/apk/Relay.apk",
-  "sameAs": [
-    "https://relaychatting.vercel.app/",
-    "https://relayapplication.vercel.app/"
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Relay (RelayChat)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay (also referred to as RelayChat) is a focused, distraction-free messaging application built for one-on-one communication. Unlike standard messaging platforms filled with public channels, group spam, and news feeds, Relay keeps every interaction direct, fast, and personal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Relay completely free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Relay is 100% free to sign up and use. There are no premium paywalls, hidden charges, or artificial message limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I access or download Relay on my device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay is accessible across all major platforms. You can download the native Android app (APK) directly from our landing page, or use Relay in any web browser. Relay is also built as a Progressive Web App (PWA), so you can install it directly onto your iPhone, iPad, Android, Mac, or Windows desktop home screen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Relay different from other chat apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay cuts out the bloat. There are no public group channels competing for your attention, no algorithmically ranked feeds, and no invasive advertising. It provides instant real-time synchronization, online presence dots, typing indicators, read receipts, and an integrated AI assistant in a clean UI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the built-in AI Assistant work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay comes equipped with a dedicated AI assistant accessible straight from your chat list. You can ask questions, request writing help, brainstorm ideas, or generate text anytime without leaving the app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find friends or contacts on Relay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Finding people is seamless. Use the search bar in Relay to search for friends by their name or unique @username. Once you select their profile, a direct chat channel opens immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my conversation data safe and private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your privacy is paramount. Relay uses secure cloud backend rules ensuring that message data is strictly accessible only by the conversation participants. We do not sell user analytics or sell data to advertisers."
+        }
+      }
+    ]
+  }
+]
 </script>
 </head>
 <body class="landing-body">
@@ -59,7 +124,10 @@
 <header class="landing-nav">
   <div class="landing-nav__inner">
     <h1 class="logo"><a class="logo__link" href="https://relaychatting.vercel.app/">Relay<span class="logo__dot">.</span></a></h1>
-    <nav class="landing-nav__links" aria-label="Account">
+    <nav class="landing-nav__links" aria-label="Main Navigation">
+      <a class="landing-nav__link" href="#features">Features</a>
+      <a class="landing-nav__link" href="#security">Security</a>
+      <a class="landing-nav__link" href="#faq">FAQ</a>
       <a class="landing-nav__login" href="https://relayapplication.vercel.app/login.html">Log in</a>
       <a class="landing-nav__signup" href="https://relayapplication.vercel.app/signup.html">Sign up</a>
     </nav>
@@ -71,6 +139,10 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__copy">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span>Pure 1-on-1 Focus • Distraction Free</span>
+      </div>
       <h2 class="hero__title">One conversation.<br>Nothing else competing for it.</h2>
       <p class="hero__subtitle">
         Relay is messaging built around a single idea: every chat is just you and one
@@ -122,35 +194,112 @@
     </div>
   </section>
 
+  <!-- ============ TRUST / HIGHLIGHTS BAR ============ -->
+  <section class="trust-bar">
+    <div class="trust-bar__inner">
+      <div class="trust-item">
+        <span class="trust-item__icon">⚡</span>
+        <div class="trust-item__text">
+          <strong>Instant Real-Time Sync</strong>
+          <span>Zero-delay live streaming</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">🔒</span>
+        <div class="trust-item__text">
+          <strong>100% Private Focus</strong>
+          <span>No feeds, ads, or algorithms</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">🤖</span>
+        <div class="trust-item__text">
+          <strong>Built-in AI Assistant</strong>
+          <span>Instant smart help anytime</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__icon">📱</span>
+        <div class="trust-item__text">
+          <strong>Android & Web Ready</strong>
+          <span>Native APK + PWA support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FEATURES ============ -->
-  <section class="features">
-    <div class="feature">
-      <span class="feature__icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-          <path d="M4 12l16-7-6.5 16-2.6-6.9L4 12z" fill="currentColor"/>
-        </svg>
-      </span>
-      <h3 class="feature__title">Sent the moment you mean it</h3>
-      <p class="feature__body">Messages land instantly, with no spinner between typing and being heard. Relay stays out of the way of the conversation.</p>
+  <section class="features" id="features">
+    <div class="section-header text-center">
+      <span class="section-badge">Why Choose Relay</span>
+      <h2 class="section-title">Designed for meaningful connection</h2>
+      <p class="section-subtitle">Everything you need for direct messaging, with zero bloat getting in your way.</p>
     </div>
-    <div class="feature">
-      <span class="feature__icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-          <circle cx="8" cy="9" r="4" stroke="currentColor" stroke-width="1.8"/>
-          <circle cx="17" cy="13" r="4" stroke="currentColor" stroke-width="1.8"/>
-        </svg>
-      </span>
-      <h3 class="feature__title">Always one-to-one</h3>
-      <p class="feature__body">There are no group threads or broadcast channels to manage. Every conversation in Relay is between exactly two people, by design.</p>
-    </div>
-    <div class="feature">
-      <span class="feature__icon">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-          <path d="M2 8.5l3.2 3.2L14 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <h3 class="feature__title">Know where you stand</h3>
-      <p class="feature__body">Presence, typing, and read receipts are always visible, so you're never guessing whether a message actually got through.</p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M4 12l16-7-6.5 16-2.6-6.9L4 12z" fill="currentColor"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Sent the moment you mean it</h3>
+        <p class="feature__body">Messages land instantly using real-time Firebase WebSocket streaming. No spinner between typing and being heard.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <circle cx="8" cy="9" r="4" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="17" cy="13" r="4" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Always one-to-one</h3>
+        <p class="feature__body">No group noise, broadcast channels, or public feeds competing for your attention. Every chat is direct and personal.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M2 8.5l3.2 3.2L14 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Know where you stand</h3>
+        <p class="feature__body">Real-time online indicators, live typing indicators, and double-check read receipts keep you informed effortlessly.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z"/>
+            <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Smart AI Assistant</h3>
+        <p class="feature__body">Integrated AI helper built right into your inbox. Ask questions, brainstorm ideas, or draft text with a single tap.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Private & Isolated</h3>
+        <p class="feature__body">Your chats remain strictly between you and your recipient. No third-party data tracking or selling.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature__icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <path d="M12 8v8M8 12h8"/>
+          </svg>
+        </span>
+        <h3 class="feature__title">Web PWA & Android APK</h3>
+        <p class="feature__body">Install Relay on iOS, Android, or desktop as a Progressive Web App, or grab the native Android APK package.</p>
+      </div>
     </div>
   </section>
 
@@ -214,11 +363,130 @@
     </div>
   </section>
 
+  <!-- ============ SECURITY ============ -->
+  <section class="security-section" id="security">
+    <div class="security-card">
+      <div class="security-card__content">
+        <div class="security-card__badge">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy First Architecture
+        </div>
+        <h2 class="security-card__title">Your messages are your private business</h2>
+        <p class="security-card__desc">
+          Relay is built on strict cloud access control policies. We do not sell user data, train public models on your private messages, or flood your screens with ads.
+        </p>
+        <ul class="security-list">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Isolated 1-to-1 conversation database rules
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Encrypted connection & secure SSL transport
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Zero tracking pixels, zero intrusive ads
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header text-center">
+      <span class="section-badge">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about Relay, how it works, and how to get started.</p>
+    </div>
+
+    <div class="faq-container">
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          <span>What is Relay (RelayChat)?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Relay (also known as RelayChat) is a modern, distraction-free messaging application built specifically for one-on-one communication. Unlike standard messaging platforms filled with public channels, group spam, and news feeds, Relay keeps every interaction direct, fast, and personal.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>Is Relay completely free to use?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Yes, Relay is 100% free to sign up and use. There are no premium paywalls, hidden charges, or artificial message limits.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>How can I access or download Relay on my device?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Relay is accessible across all major devices. You can download our native Android app (APK) directly from this page, or use Relay in any web browser. Relay is also a Progressive Web App (PWA), so you can install it directly onto your iPhone, iPad, Android, Mac, or Windows home screen.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>What makes Relay different from other chat apps?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Relay eliminates unnecessary clutter. There are no public channels or algorithms competing for your attention. It delivers instant real-time synchronization, online presence dots, typing indicators, read receipts, and an integrated AI assistant in a clean, dark-themed interface.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>How does the built-in AI Assistant work?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Relay includes a dedicated AI companion accessible right from your chat list. You can ask questions, draft messages, translate text, or get quick answers anytime without leaving your conversation environment.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>How do I find friends or contacts on Relay?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Finding contacts is fast. Use the search bar in Relay to search for friends by their name or unique <code>@username</code>. Selecting their profile immediately opens your direct 1-on-1 chat room.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>Is my conversation data safe and private?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Yes. Your privacy is paramount. Relay uses secure cloud backend rules ensuring that message data is strictly accessible only by the conversation participants. We do not track users across the web or sell data to advertisers.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <!-- ============ CTA ============ -->
   <section class="closing-cta">
     <h2 class="closing-cta__title">Start a conversation worth having</h2>
-    <p class="closing-cta__body">Free to join, ready in under a minute.</p>
-    <a class="hero__cta" href="https://relayapplication.vercel.app/signup.html">Create an account</a>
+    <p class="closing-cta__body">Free to join, ready in under a minute. Experience distraction-free messaging today.</p>
+    <div class="closing-cta__actions">
+      <a class="hero__cta" href="https://relayapplication.vercel.app/signup.html">Create an account</a>
+      <a href="https://relayapplication.vercel.app/apk/Relay.apk" download="relay.apk" class="btn-app-download btn-android">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm-11.046 0c-.5511 0-.9993-.4486-.9993-.9993.9993-.9993c.552 0 1 .4482 1 .9993s-.448 1-1 1zm11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1522-.5676.416.416 0 0 0-.5676.1522l-2.0223 3.503C15.5942 8.3514 13.856 8.01 12 8.01c-1.856 0-3.5942.3414-5.1367.9398L4.841 5.4468a.416.416 0 0 0-.5676-.1522.416.416 0 0 0-.1522.5676l1.9973 3.4592C2.6873 11.2355.3333 14.654.3333 18.6667h23.3334c0-4.0127-2.354-7.4312-5.7862-9.3453z"/>
+        </svg>
+        <span>Get Android APK</span>
+      </a>
+    </div>
   </section>
 
 </main>
@@ -230,14 +498,17 @@
       <p class="landing-footer__tagline">Messaging for one conversation at a time. Also known as RelayChat, available as RelayApp for Android.</p>
     </div>
 
-    <nav class="landing-footer__col" aria-label="Account">
-      <h4 class="landing-footer__heading">Account</h4>
-      <a href="https://relayapplication.vercel.app/login.html">Log in</a>
-      <a href="https://relayapplication.vercel.app/signup.html">Create an account</a>
+    <nav class="landing-footer__col" aria-label="Navigation">
+      <h4 class="landing-footer__heading">Explore</h4>
+      <a href="#features">Features</a>
+      <a href="#security">Security</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
-    <nav class="landing-footer__col" aria-label="Get the app">
-      <h4 class="landing-footer__heading">Get the app</h4>
+    <nav class="landing-footer__col" aria-label="Account & Apps">
+      <h4 class="landing-footer__heading">Account & Apps</h4>
+      <a href="https://relayapplication.vercel.app/login.html">Log in</a>
+      <a href="https://relayapplication.vercel.app/signup.html">Create an account</a>
       <a href="https://relayapplication.vercel.app/apk/Relay.apk" download="relay.apk">Download for Android</a>
     </nav>
   </div>
